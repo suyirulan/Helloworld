@@ -1,0 +1,32 @@
+.饿汉式
+
+class People{
+    private static People p=new People();
+    private People(){
+    
+    }
+    public static People getInstance(){
+        return p;
+    }
+    public void show() {
+       System.out.println("========");
+    }
+}
+
+懒汉式
+
+class People{
+    private static People p;
+    private People(){
+    
+    }
+    public static People getInstance(){
+        if(p==null){
+            p=new People();
+        }
+            return p;
+    }
+    public void show() {
+       System.out.println("========");
+    }
+}
